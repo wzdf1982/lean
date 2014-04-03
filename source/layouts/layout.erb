@@ -31,28 +31,23 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
     <link rel="shortcut icon" sizes="16x16" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="Teahour.fm Feed" href="/feed.xml" />
-
-<%= stylesheet_link_tag 'application' %>
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
-    <%=  javascript_include_tag 'application' %>
-    <script type="text/javascript">var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '<%= data.site.google_analytics_id %>']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();</script>
+    <%= stylesheet_link_tag 'application' %>                                                                                                                                 
+    <%= javascript_include_tag 'application' %>   
   </head>
 
   <body class="<%= page_classes %>">
 
     <header class="masthead">
-      <hgroup>
-        <h1>Teahour.fm</h1>
-        <h2 class="tagline">Tea hour for geek's mind.</h2>
-      </hgroup>
-
+      <div class="container">
+            <div id="robot">
+                <span class="left eye"></span>
+                <span class="right eye"></span>
+                <span class="siren"></span>
+                <span class="glow"></span>
+                <span class="mouth"></span>
+            </div>
+        </div>
+      
       <ul class="participants">
         <%= yield_content(:participants) %>
       </ul>
@@ -69,7 +64,6 @@
     <footer class="footer">
       <div class="global-nav">
         <ul class="social-connect">
-        <li><a href="//itunes.apple.com/cn/podcast/teahour.fm/id608387170?l=en"><i class="icons-podcast"></i></a></li>
         <li><a href="/feed.xml"><i class="icons-rss"></i></a></li>
         <li class="dropdown dropup" id="newsletter">
           <a href="#newsletter" class="dropdown-toggle" data-toggle="dropdown"><i class="icons-email"></i></a>
@@ -84,8 +78,8 @@
            </ul>
         </li>
 
-        <li><a href="https://gitcafe.com/teahour/site"><i class="icons-github"></i></a></li>
       </ul>
+        <ul><li><i class="icon-zoom-in"></i></li></ul>
 
         <ul class="nav">
         <li class="dropdown dropup" id="episodes">
@@ -132,24 +126,11 @@
       </div>
 
       <p class="copyright">
-        &copy; <%= Time.now.year %> <%= data.site.title %> <a href="//creativecommons.org/licenses/by-nc-sa/2.5/cn/" target="_blank">CC BY 2.5</a>
-        <br />
-        Site built by <a href="https://fengche.co" target="_blank" class="vendor">Fengche.co</a>,
-        Logo by <a href="//weibo.com/u/1766991917" target="_blank" class="vendor">Alaia Liu</a>,
-        Audios hosted by <a href="//www.upyun.com/?md=Railscasts-china" target="_blank" class="vendor">Upyun</a>
+        <a href="//creativecommons.org/licenses/by-nc-sa/2.5/cn/" target="_blank">R</a>
       </p>
     </footer>
 
-    <!-- topics
-      <span class="tag">Web</span>,
-      <span class="tag">Mobile</span>,
-      <span class="tag">Programming</span>,
-      <span class="tag">Entreprenurship</span>,
-      <span class="tag">Geeky</span>
-     -->
-
     <%= javascript_include_tag 'main' %>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5123d9651f2e6f1f"></script>
     <%= yield_content :footer %>
   </body>
 </html>

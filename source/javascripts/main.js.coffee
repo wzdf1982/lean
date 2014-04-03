@@ -21,11 +21,6 @@ audioPlayer = ->
     audio = $("audio")
     audio.replaceWith("""<embed src="#{audio.find('source').attr('src')}" autostart=false width='80%' height=30 enablejavascript="true" >""")
 
-shareToSocial = ->
-  addthis_config = {"data_track_addressbar":true, services_compact:'sinaweibo,twitter,facebook,linkedin,email'}
-  $(".icons-share").each (idx, elem) ->
-    addthis.button(elem, addthis_config, { url: window.location.protocol + "//" + window.location.host + $(elem).data('url'), title: "[Teahour.fm] " + $(elem).data('title') } )
-
 $ ->
   $('<h6/>').html("<a href='#' class='toggle-notes'>More Resources »</a>").insertBefore(".notes")
   $(".toggle-notes").click (e) ->
@@ -39,10 +34,10 @@ $ ->
       notes.hide()
       $(this).parent().prepend("<p>...</p>")
   audioPlayer()
-  shareToSocial()
   $("article").find('a').each (idx, elem) ->
     $(elem).attr("target", "_blank")
-
+  robot = new Robot(document.getElementById("robot"))
+  robot.start()
 # Modernizr.load [
   # {
     # load: '/javascripts/vendor/plugins/jquery.meca-2.1.0.js',

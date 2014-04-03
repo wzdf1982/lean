@@ -14,14 +14,14 @@ body * {
 
 body {
   color: #fff;
-  background: transparent url('/images/bg.png');
+  background: transparent url('/images/grid.png');
   background-attachment:fixed;
 }
 
 a {
   color: $linkColor;
   @include transition(all 0.1s linear);
-  &:hover { color: #fff; }
+  &:hover { color: #ffa366; }
 }
 
 .masthead {
@@ -29,29 +29,20 @@ a {
   position: fixed;
   left: -100px;
   top: -100px;
-  background: rgba(0,0,0,.1);
+  background: white;
+  border:1px dashed #f60;
   width: 600px;
   height: 600px;
   padding: 0;
   border-radius: 50%;
   text-align: center;
   h1 { text-indent: -999em; }
-  .tagline {
-    text-indent: -999em;
-    background: transparent url("/images/cup-of-tea.png") no-repeat;
-    position: absolute;
-    top: 115px;
-    left: 130px;
-    width: 416px;
-    height: 289px;
-  }
 
   .participants {
     list-style: none;
     li {
       position: absolute;
       display: inline-block;
-      background-color: rgba(0,0,0,.1);
       @include border-radius(50%);
 
       &.host:before {
@@ -64,6 +55,8 @@ a {
         background-image: url("/images/sprites.png");
         background-position: 0 0;
         background-repeat: no-repeat;
+        background-color: #ffa366;
+        border-radius: 20px;
       }
     }
     .clock7 { left: 135px; top: 440px; }
@@ -72,13 +65,11 @@ a {
     .clock4 { left: 455px; top: 320px; }
     img {
       @include border-radius(50%);
-      border: 2px solid $paleGreen;
+      border:1px solid #f60;
       margin: 8px;
-      //@include box-shadow(0 0 15px rgba(200,200,200,.5));
     }
     a:hover img {
       margin-top: 7px;
-      @include box-shadow(0 0 10px rgba(0,215,55,.7));
     }
   }
 }
@@ -93,8 +84,8 @@ a {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #68b77e;
-  background-color: rgba(255,255,255,.2);
+  background-color: white;
+  border-top: 1px dashed #f60;
   .global-nav {
     > ul {
       list-style: none;
@@ -165,7 +156,7 @@ a {
     font-size: 11px;
     line-height: 20px;
     text-align: right;
-    color: #9bf7b3;
+    color: #f60;
     a {
       color: #b8ee75;
       &:hover { color: #fff; text-decoration: none; }

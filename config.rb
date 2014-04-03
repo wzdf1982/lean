@@ -156,7 +156,3 @@ configure :build do
   activate :gzip
 end
 
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.branch = "gh-pages"
-end
